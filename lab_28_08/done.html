@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <form action="done.html" method="get">
+        <fieldset>
+            <legend>Identificacion del alumno</legend>
+            <p>Nombre completo</p>
+            <label for="nombre">Nombres:</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Escriba sus Nombres">
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" autocomplete="name" placeholder="Escriba sus Apellidos">
+            <p></p>            
+            <label for="rut">Rut</label>
+            <input type="text" id="rut" name="rut" required inputmode="numeric" maxlength="8" placeholder="Rut">
+
+            <label for="numero-identificador">-</label>
+            <input type="text" id="numero-identificador" name="numero-identificador" required inputmode="numeric" maxlength="1" placeholder="N° Identificador">
+            <p></p>
+            <label for="email"> Correo electronico</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <label for="tel">Telefono</label>
+            <input type="tel" id="tel" name="tel" autocomplete="tel" >
+        </fieldset>
+        <fieldset>
+            <legend>Datos academicos</legend>
+                <label for="carrera">Seleccione su carrera:</label>
+                <Select id="carrera" name="carrera">
+                    <option value="">--Seleccione su carrera--</option>
+                    <option value="informatica">ICINF</option>
+                    <option value="civil">IC</option>
+                    <option value="electrica">ICE</option>
+                    <option value="industrial">ICI</option>
+                </Select>
+                <label for=""></label>
+        </fieldset>
+    </form>
+</body>
+</html>
