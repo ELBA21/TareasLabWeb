@@ -1,0 +1,25 @@
+<button id="inc">Sumar</button>
+<button id="reset">Reset</button>
+<output id="val">0</output>
+
+<head>a</head>
+<script>
+
+function makeCounter(initial=0){  //Funcion arrow
+    let value = initial;
+    return {
+        next: () => ++value,
+        reset: () => (value = initial),
+        get: () => value
+    };
+}
+    const c = makeCounter(0);
+    const $ = s => document.querySelector(s);
+    const render = ()=> {$('#val').textContent = c.get();}; //Obtiene datos
+
+    $("#inc").addEventListener("click", () => { c.next(); render(); });
+    $("#reset").addEventListener("click", () => { c.reset(); render(); });
+
+    render();
+</script>
+
