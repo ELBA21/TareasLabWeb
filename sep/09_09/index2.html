@@ -1,0 +1,51 @@
+<form action="done.html" method="get">
+  <fieldset>
+    <legend>Identificación del alumno</legend>
+
+    <!-- Nombre completo -->
+    <label for="nombre">Nombre completo:</label>
+    <input 
+      type="text" 
+      id="nombre" 
+      name="nombre" 
+      required 
+      autocomplete="name"
+      placeholder="Ej: Juan Pérez" />
+    <br><br>
+
+    <!-- RUT chileno -->
+    <label for="rut">RUT:</label>
+    <input 
+      type="text" 
+      id="rut" 
+      name="rut" 
+      required 
+      inputmode="numeric" 
+      maxlength="12"
+      placeholder="12345678-9" />
+    <br><br>
+
+    <!-- Correo electrónico -->
+    <label for="correo">Correo electrónico:</label>
+    <input 
+      type="email" 
+      id="correo" 
+      name="correo" 
+      required 
+      autocomplete="email"
+      placeholder="nombre@dominio.cl" />
+    <br><br>
+
+    <!-- Teléfono -->
+    <label for="telefono">Teléfono:</label>
+    <input 
+      type="tel" 
+      id="telefono" 
+      name="telefono" 
+      autocomplete="tel"
+      placeholder="+56 9 1234 5678" />
+    <br><br>
+
+    <button type="submit">Enviar</button>
+  </fieldset>
+</form>

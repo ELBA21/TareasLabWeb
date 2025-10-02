@@ -28,10 +28,20 @@ function Pfilter(products){
 function ProductCard({id,name,stock}){
     return `
     <div class="product" data-id="${id}">
-    <h3>${name}</h3>
-    <p>Stock: ${stock}</p>
-    <button data-action="toggle">Cambiar stock</button>
-    <button data-action="remove">Eliminar</button>
+      <div class"img">
+        <img src="https://picsum.photos/150/100" alt="placeholder">
+      </div>
+
+      <div class="producto-data">
+        <h3>${name}</h3>
+        <p>Stock: ${stock}</p>
+      </div>
+      
+      <div class="botones-lat">
+        <button data-action="toggle">Cambiar stock</button>
+        <button data-action="remove">Eliminar</button>
+      </div>
+
     </div>
     `;
 }

@@ -5,7 +5,7 @@ const users = [
 
 const byAge = users.reduce((acc,u) =>{
     if(acc[u.age]<20){
-        acc[u.age]=[];        
+        acc[u.age]=[];
     }
     acc[u.age].push(u.name);
     return acc;

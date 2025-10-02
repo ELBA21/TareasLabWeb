@@ -1,0 +1,66 @@
+body{
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(45deg, #2d5298, #2f9e44);
+  min-height: 100vh;
+
+}
+
+#seccion {
+  background-color: white;
+  max-width: 600px;
+  width: 90%;              /* ocupa casi todo en pantallas pequeñas */
+  padding: 20px;           /* un poco más de espacio interno */
+  margin: 20px auto;       /* centrado horizontal */
+  border-radius: 10px;     /* esquinas suavizadas */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra sutil para destacar */
+}
+
+#form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+#catalog{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+input{
+  flex: 1 1 120px;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+button{
+  background-color: aliceblue;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.product {
+  background-color: white;
+  
+  border: 2px solid black;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap:wrap;
+}
+.botones-lat {
+  display:  flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 20px;
+}
+.product > .producto-data {
+  flex: 1 1 150px;
+}
+img {
+  margin: 20px;
+  border-radius: 4px;
+}
