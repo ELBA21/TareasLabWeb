@@ -38,8 +38,8 @@ function App() {
     setcart((prevcart) => {
       const exist = prevcart.find((p) => p.id === prod.id);
       if (!exist) {
-        return prevcart;
         console.log("[debug] no se puede eliminar un producto que no existe");
+        return prevcart;
       } else {
         return prevcart.filter((p) => p.id !== prod.id);
       }
@@ -65,7 +65,7 @@ function App() {
       <TabBar tab={tab} setActivar={setTab} />
       {tab === "Menu" && <Menu productos={PRODUCTS} onAdd={onAdd} />}
       {tab === "Carrito" && <Cart cart={getcart} onInc={onInc} onDec={onDec} onRemove={onRemove} />}
-      {tab === "Pago" && <Pago />}
+      {tab === "Pago" && <Pago cart={getcart} />}
 
 
     </>
