@@ -1,0 +1,6 @@
+--2025-10-24 15:17:05--  https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install.sh
+Resolviendo raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.111.133, 185.199.108.133, ...
+Conectando con raw.githubusercontent.com (raw.githubusercontent.com)[185.199.109.133]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 429 Too Many Requests
+2025-10-24 15:17:06 ERROR 429: Too Many Requests.
+
