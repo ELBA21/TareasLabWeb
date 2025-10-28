@@ -12,7 +12,7 @@ function useWeather({ posicion }) {
 
     //Fetch llama al link, hay que usar `` pq sino no funca
     fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${posicion.lat}&longitude=${posicion.lng}&hourly=temperature_2m`,
+      `https://api.open-meteo.com/v1/forecast?latitude=${posicion[0]}&longitude=${posicion[1]}&hourly=temperature_2m`,
     )
       .then((r) => r.json()) //Guardamos la respuesta en un json
       .then((datos) => {
