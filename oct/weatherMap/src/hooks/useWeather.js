@@ -6,14 +6,17 @@ function useWeather({ posicion }) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    // Establecemos controladores primero
     setLoading(true);
     setError(false);
+
+    //Fetch llama al link, hay que usar `` pq sino no funca
     fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${e.latlng.lat}&longitude=${e.latlng.lng}&hourly=temperature_2m`,
+      `https://api.open-meteo.com/v1/forecast?latitude=${posicion.lat}&longitude=${posicion.lng}&hourly=temperature_2m`,
     )
-      .then((r) => r.json())
+      .then((r) => r.json()) //Guardamos la respuesta en un json
       .then((datos) => {
-        setData(datos);
+        setData(datos); //Movemos el json a nuestro state "datos"
       })
       .catch((err) => {
         setError(true);
@@ -22,4 +25,7 @@ function useWeather({ posicion }) {
         setLoading(false);
       });
   }, [posicion]);
+  return { data, isLoading, error };
 }
+
+export default useWeather;
