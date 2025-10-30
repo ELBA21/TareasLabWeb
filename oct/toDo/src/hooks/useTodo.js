@@ -1,17 +1,17 @@
 import { useState, useEffect, use } from "react";
 import toDoApi from "../services/toDoApi";
-const toDoApi = toDoApi();
+const api = toDoApi();
 
-function useGet() {
+export function useGet() {
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
-  const [error, setError] = use(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
-    async function get() {
+    async function Get() {
       try {
-        const healtchek = await toDoApi.get();
+        const healtchek = await api.get();
         console.log(healtchek);
         setData(healtchek);
       } catch (err) {
@@ -21,13 +21,13 @@ function useGet() {
         setLoading(false);
       }
     }
-    get();
+    Get();
   }, []);
   return { data, isLoading, error };
 }
 
-function useGetTodo() {
-  const [toDo, setToDo] = useState([]);
+export function useGetTodo() {
+  const [ToDo, setToDo] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -35,16 +35,18 @@ function useGetTodo() {
     setLoading(true);
     async function getTodo() {
       try {
-        const dato = toDoApi.getTodo();
+        const dato = await api.getTodo();
         setToDo(dato);
       } catch (err) {
         console.log("[DEBUG]:error en usegetTodo ");
-        setError(error);
+        setError(err);
       } finally {
         setLoading(false);
       }
     }
+    getTodo();
   }, []);
+  return { ToDo, isLoading, error };
 }
 // async function getTodo() {
 //   try {
