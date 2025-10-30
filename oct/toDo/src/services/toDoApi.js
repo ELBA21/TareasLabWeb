@@ -22,7 +22,7 @@ async function getTodo() {
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
-    const result = await response.json();
+    const result = await response.json(); //<== aparentemente esto hace que el json sea objetio de forma automatica
     console.log(result);
     return result;
   } catch (err) {
