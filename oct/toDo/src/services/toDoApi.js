@@ -28,7 +28,7 @@ async function getTodo() {
   } catch (err) {
     console.log("[DEBUG]: Error en getTodo 2, de toDoApi");
     console.error(err.message);
-    return err;
+    throw err;
   }
 }
 
