@@ -30,23 +30,22 @@ export function useGetTodo() {
   const [ToDo, setToDo] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  async function getTodo() {
+    try {
+      const dato = await api.getTodo();
+      setToDo(dato);
+    } catch (err) {
+      console.log("[DEBUG]:error en usegetTodo ");
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  }
   useEffect(() => {
     setLoading(true);
-    async function getTodo() {
-      try {
-        const dato = await api.getTodo();
-        setToDo(dato);
-      } catch (err) {
-        console.log("[DEBUG]:error en usegetTodo ");
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    }
     getTodo();
   }, []);
-  return { ToDo, isLoading, error };
+  return { ToDo, setToDo, getTodo, isLoading, error };
 }
 
 export function usePost() {
@@ -85,6 +84,7 @@ export function useToggle() {
       const data = await api.toggle(id);
       console.log(data);
       setData(data);
+      return data;
     } catch (err) {
       console.log(err);
       setError(err);
@@ -105,6 +105,7 @@ export function useDelete() {
       const data = await api.el_delete(id);
       console.log(data);
       setData(data);
+      return data;
     } catch (err) {
       console.log("[DEBUG]: Error en console log");
       setError(err);
@@ -114,19 +115,3 @@ export function useDelete() {
   }
   return { el_delete, data, isLoading, error };
 }
-
-// const handleDelete = async () => {
-//   console.log("[DEBUG]: Probando Delete ");
-//   setLoading(true);
-//   try {
-//     let id = "6902c501eb8f99bf3c048de7";
-//     const data = await api.el_delete(id);
-//     console.log("Toggle!", data);
-//     setResult(data);
-//   } catch (err) {
-//     console.log("Erro:", err);
-//     setResult("Error al hacer Delete");
-//   } finally {
-//     setLoading(false);
-//   }
-// };
