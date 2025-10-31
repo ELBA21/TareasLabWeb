@@ -63,6 +63,7 @@ export function usePost() {
       const data = await api.post(ToDo);
       console.log("[DEBUG]: POST: " + data);
       setData(data);
+      return data;
     } catch (err) {
       console.log("[DEBUG]: Error en usePost");
       setError(err);
