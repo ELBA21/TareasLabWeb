@@ -2,14 +2,29 @@ import { useState } from "react";
 
 function ToDoCard({ ToDo }) {
   const { id, title, description, completed } = ToDo;
+  const cardStyle = {
+    border: "1px solid black",
+    borderRadius: "8px",
+    padding: "1rem",
+    width: "250px",
+  };
+  const tittleStyles = {
+    fontWeight: "bold",
+    margin: 0,
+  };
+  const textStyles = {
+    margin: 0,
+  };
 
   return (
-    <div>
-      <p>{id}</p>
-      <p>{title}</p>
-      <p>{description}</p>
-      <p>{completed}</p>
+    <div style={cardStyle}>
+      <p style={textStyles}>{id}</p>
+      <p style={tittleStyles}>{title}</p>
+      <p style={textStyles}>{description}</p>
+      <p style={textStyles}>{completed ? "Completado" : "Pendiente"}</p>
       <button>TOGGLE (no terminado)</button>
+
+      <button>Delete</button>
     </div>
   );
 }
